@@ -1,0 +1,131 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    overflow: hidden;
+    height: 100vh;
+    background-color: #22313f;
+}
+
+.header {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img {
+    width: 200px;
+
+}
+
+.content {
+    background-image: url(img/vecteezy_abstract-white-background-of-embossed-surface_31974134.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+}
+
+.content p {
+    font-size: 18px;
+    color: #2b3c4c;
+    font-weight: bold;
+}
+
+.video-container {
+    padding: 10px;
+}
+
+video {
+    width: 50%;
+    max-width: 300px;
+    height: 200px;
+    border-radius: 10px;
+}
+
+.content .cta-text {
+    font-size: 22px;
+    padding: 10px;
+}
+
+button {
+    border: none;
+    background-color: seagreen;
+    color: white;
+    font-size: 1.15rem;
+    font-weight: 500;
+    padding: 0.8rem 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transform: translate(1) translate(0, 0);
+    transition: transform 225ms, box-shadow 225ms;
+}
+
+button:hover {
+    transform: scale(1.05) translate(0, -0.15rem);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.35);
+}
+
+button:active {
+    transform: scale(1) translate(0, 0.15rem);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+
+
+
+.footer {
+    padding: 20px;
+}
+
+.social-icons a {
+    margin: 4px;
+}
+
+.icon-marquee {
+    display: flex;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.icon-marquee .icon {
+    padding: 12px;
+}
+
+.icon-marquee .icon img {
+    width: 54px;
+    border-radius: 30px;
+}
+
+@media (min-width:1024px) {
+    .footer {
+        padding: 20px;
+    }
+
+    .social-icons a {
+        margin: 4px;
+    }
+
+    .icon-marquee {
+        display: flex;
+        overflow: hidden;
+        white-space: nowrap;
+        justify-content: center;
+    }
+
+    .icon-marquee .icon {
+        padding: 12px;
+    }
+
+    .icon-marquee .icon img {
+        width: 60px;
+        border-radius: 30px;
+    }
+}

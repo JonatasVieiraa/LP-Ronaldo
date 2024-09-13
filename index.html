@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Landing Page - Candidato Ronaldo</title>
+</head>
+
+<body>
+
+    <header class="header">
+
+            <img class="img" src="img/ronaldo-principal.png" alt="img">
+        </div>
+    </header>
+
+    <main class="content">
+        <p>
+            Comprometido em garantir educação, saúde, segurança e emprego digno para todos.
+            Juntos, podemos construir.
+        </p>
+        <div class="video-container">
+            <video controls>
+                <source src="video/video-ronaldo.MP4" type="video/mp4">
+                Seu navegador não suporta a reprodução de vídeos.
+            </video>
+        </div>
+        <p class="cta-text">Clique aqui 👇</p>
+        <button class="button">Entre no grupo</button>
+    </main>
+
+    <footer class="footer">
+        <div class="social-icons">
+            <a href="#"><img src="img/instagram.svg" alt="Instagram"></a>
+            <a href="#"><img src="img/facebook.svg" alt="Facebook"></a>
+            <a href="#"><img src="img/whatsapp.svg" alt="WhatsApp"></a>
+        </div>
+        <div class="icon-marquee">
+            <div class="icon">
+                <img src="img/famia-icone.svg" alt="Icone 1">
+            </div>
+            <div class="icon">
+                <img src="img/educacao.svg" alt="Icone 2">
+            </div>
+            <div class="icon">
+                <img src="img/icone-saude.svg" alt="Icone 3">
+            </div>
+            <div class="icon">
+                <img src="img/icone de segurança.svg" alt="Icone 4">
+            </div>
+            <div class="icon">
+                <img src="img/icone-trabalho.svg" alt="Icone 5">
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const marquee = document.querySelector('.icon-marquee');
+            const totalIconsWidth = marquee.scrollWidth;
+            marquee.innerHTML += marquee.innerHTML;
+            let scrollPosition = 0;
+            const scrollSpeed = 1 * 0.5;
+            function marqueeAnimation() {
+                scrollPosition += scrollSpeed;
+                if (scrollPosition >= totalIconsWidth) {
+                    scrollPosition = 0;
+                }
+                marquee.scrollLeft = scrollPosition;
+                requestAnimationFrame(marqueeAnimation);
+            }
+
+            marqueeAnimation();
+        });
+    </script>
+</body>
+
+</html>
