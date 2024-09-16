@@ -11,9 +11,7 @@
 <body>
 
     <header class="header">
-
-            <img class="img" src="img/ronaldo-principal.png" alt="img">
-        </div>
+        <img class="img" src="img/ronaldo-principal.png" alt="img">
     </header>
 
     <main class="content">
@@ -21,13 +19,15 @@
             Comprometido em garantir educação, saúde, segurança e emprego digno para todos.
             Juntos, podemos construir.
         </p>
-        <div class="video-container">
-            <video controls>
-                <source src="video/video-ronaldo.MP4" type="video/mp4">
-                Seu navegador não suporta a reprodução de vídeos.
-            </video>
+        <div class="video-container" id="videoContainer">
+            <div class="video-frame">
+                <iframe id="videoIframe" src="https://www.youtube.com/embed/9DOjDumNtPU" title="RONALDO REELS"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <button class="expand-button" id="expandButton">⤢</button>
+            </div>
         </div>
-        <p class="cta-text">Clique aqui 👇</p>
         <button class="button">Entre no grupo</button>
     </main>
 
@@ -55,6 +55,7 @@
             </div>
         </div>
     </footer>
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const marquee = document.querySelector('.icon-marquee');
@@ -62,6 +63,7 @@
             marquee.innerHTML += marquee.innerHTML;
             let scrollPosition = 0;
             const scrollSpeed = 1 * 0.5;
+
             function marqueeAnimation() {
                 scrollPosition += scrollSpeed;
                 if (scrollPosition >= totalIconsWidth) {
@@ -72,6 +74,51 @@
             }
 
             marqueeAnimation();
+
+            // Video expansion
+            const videoContainer = document.getElementById('videoContainer');
+            const videoIframe = document.getElementById('videoIframe');
+            const content = document.querySelector('.content');
+
+            videoContainer.addEventListener('click', (e) => {
+                if (!videoContainer.classList.contains('expanded')) {
+                    videoContainer.classList.add('expanded');
+                    e.stopPropagation();
+                    // Store the current src
+                    const currentSrc = videoIframe.src;
+                    // Reload the iframe to force it to resize
+                    videoIframe.src = currentSrc;
+                }
+            });
+
+            document.body.addEventListener('click', (e) => {
+                if (videoContainer.classList.contains('expanded') && !videoContainer.contains(e.target)) {
+                    videoContainer.classList.remove('expanded');
+                    // Store the current src
+                    const currentSrc = videoIframe.src;
+                    // Reload the iframe to force it to resize
+                    videoIframe.src = currentSrc;
+                }
+            });
+            const expandButton = document.getElementById('expandButton');
+
+            expandButton.addEventListener('click', (e) => {
+                e.stopPropagation();
+                toggleVideoExpansion();
+            });
+
+            function toggleVideoExpansion() {
+                videoContainer.classList.toggle('expanded');
+                if (videoContainer.classList.contains('expanded')) {
+                    expandButton.textContent = '⤓';
+                } else {
+                    expandButton.textContent = '⤢';
+                }
+                // Store the current src
+                const currentSrc = videoIframe.src;
+                // Reload the iframe to force it to resize
+                videoIframe.src = currentSrc;
+            }
         });
     </script>
 </body>
