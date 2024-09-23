@@ -114,45 +114,6 @@ body {
     z-index: 10;
 }
 
-.button {
-    border: none;
-    background-color: var(--button-color);
-    color: var(--text-color);
-    font-size: 1rem;
-    font-weight: 500;
-    padding: 0.5rem 0.5rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-    cursor: pointer;
-    transition: transform 225ms, box-shadow 225ms;
-    animation: pulse 1.5s infinite;
-    width: 150px;
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.05);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
-
-.button:hover {
-    transform: scale(1.05) translateY(-0.15rem);
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.35);
-}
-
-.button:active {
-    transform: scale(1) translateY(0.15rem);
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-}
-
 .footer {
     padding: 0.5rem;
 }
