@@ -267,16 +267,17 @@ body {
         top: 0rem;
     }
 
-    .social-icons {
-        height: 0%;
-    }
-
+   
     .icon-marquee .icon img {
-        width: 150px;
+        width: 130px;
+    }
+    .icon-marquee .icon {
+        padding: 4.5rem;
+        flex-shrink: 0;
     }
 
     .rodape {
-        font-size: 26px;
+        font-size: 20px;
         color: #ffffff;
         display: flex;
     }
