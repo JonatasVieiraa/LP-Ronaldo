@@ -1,6 +1,7 @@
 # Cartão Online - Professor Ronaldo
 
 Este é um cartão de campanha online desenvolvido para o Professor Ronaldo, permitindo o compartilhamento de suas propostas de forma sofisticada e exclusiva.
+O Layout foi focado para atender com maior qualidade os dispositivos mobile.
 
 ## Como Executar
 
